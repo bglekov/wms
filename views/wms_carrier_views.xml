@@ -36,7 +36,6 @@
                             <field name="name" placeholder="Name"/>
                         </h1>
                     </div>
-
                     <group>
                         <group>
                             <field name="is_active"/>
