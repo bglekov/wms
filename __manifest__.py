@@ -20,6 +20,7 @@
         'sequrity/ir.model.access.csv',
         'views/wms__main__menu.xml',
         'views/wms_carrier_views.xml',
+        'views/wms_country_views.xml',
     ],
     'demo': [
 

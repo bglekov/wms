@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 wms.access_wms_carrier,access_wms_carrier,wms.model_wms_carrier,base.group_user,1,1,1,1
+wms.access_wms_country,access_wms_country,wms.model_wms_country,base.group_user,1,1,1,1
