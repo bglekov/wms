@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--CARRIER-->
+    <record id="Meest" model="wms.carrier">
+        <field name="name">Meest Poshta</field>
+        <field name="is_active" eval="True"/>
+    </record>
+    <record id="NP" model="wms.carrier">
+        <field name="name">Nova Poshta</field>
+        <field name="is_active" eval="True"/>
+    </record>
+    <record id="UP" model="wms.carrier">
+        <field name="name">Ukr Poshta</field>
+        <field name="is_active" eval="True"/>
+    </record>
+
+ </odoo>

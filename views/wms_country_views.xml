@@ -41,7 +41,7 @@
     <record id="wms_country_act_window" model="ir.actions.act_window">
         <field name="name">Countries</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">wms.country</field>
+        <field name="res_model">res.country</field>
         <field name="view_mode">tree,form</field>
     </record>
 
