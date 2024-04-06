@@ -1,0 +1,177 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wms
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-06 21:40+0000\n"
+"PO-Revision-Date: 2024-04-06 21:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_search
+msgid "Active only"
+msgstr "Тільки активні"
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_admin_group_menu
+msgid "Admin tools"
+msgstr "Адміністрування"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_carrier_branch_act_window
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__branch_ids
+#: model:ir.ui.menu,name:wms.wms_carrier_branch_menu
+msgid "Branches"
+msgstr "Підрозділи"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__carrier_id
+#: model:ir.ui.menu,name:wms.wms_admin_group_carrier_menu
+msgid "Carrier"
+msgstr "Перевізник"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_carrier_branch
+msgid "Carrier Branches"
+msgstr "Підрозділи перевізників"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_carrier_act_window
+#: model:ir.ui.menu,name:wms.wms_carrier_menu
+msgid "Carriers"
+msgstr "Перевізники"
+
+#. module: wms
+#: model:ir.model.fields.selection,name:wms.selection__wms_carrier_branch__status__closed
+msgid "Closed"
+msgstr "Зачинено"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_search
+msgid "Closed only"
+msgstr "Тільки зачинені"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__code
+msgid "Code"
+msgstr "Код"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_country_act_window
+#: model:ir.model,name:wms.model_res_country
+#: model:ir.ui.menu,name:wms.wms_country_menu
+msgid "Countries"
+msgstr "Країни"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_search
+msgid "Draft only"
+msgstr ""
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_carrier
+msgid "First/Last miles Carriers"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__id
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__id
+msgid "ID"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__is_active
+msgid "Is Active"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_locations_group_menu
+msgid "Locations"
+msgstr "Локації"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier__name
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__name
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_country_form
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_form
+msgid "Non active"
+msgstr ""
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_search
+msgid "Open only"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields.selection,name:wms.selection__wms_carrier_branch__status__open
+msgid "Open)"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_res_country__search_deep
+msgid "Search Deep"
+msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__status
+msgid "Status"
+msgstr "Статус"
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_user_group_menu
+msgid "User"
+msgstr "Користувач"
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_main_group_menu
+msgid "WMS"
+msgstr ""
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_warehouse_group_menu
+msgid "Warehouse"
+msgstr "Склад"
