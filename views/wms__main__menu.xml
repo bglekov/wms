@@ -21,4 +21,8 @@
               name="Admin tools" sequence="90"
               parent="wms_main_group_menu"/>
 
+        <menuitem id="wms_admin_group_carrier_menu"
+                  name="Carrier" sequence="91"
+                  parent="wms_admin_group_menu"/>
+
 </odoo>

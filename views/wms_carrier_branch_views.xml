@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="wms_carrier_branch_act_window" model="ir.actions.act_window">
+        <field name="name">Branches</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wms.carrier.branch</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem id="wms_carrier_branch_menu"
+              action="wms_carrier_branch_act_window"
+              parent="wms_admin_group_carrier_menu"
+              name="Branches" sequence="200"/>
+
     <!-- TREE -->
-    <record id="wms_carrier_tree" model="ir.ui.view">
-        <field name="name">wms.carrier.tree</field>
-        <field name="model">wms.carrier</field>
+    <record id="wms_carrier_branch_tree" model="ir.ui.view">
+        <field name="name">wms.carrier.branch.tree</field>
+        <field name="model">wms.carrier.branch</field>
         <field name="arch" type="xml">
             <tree expand="1">
                 <!--            Атрибут expand визначає чи будуть групи розгорнуті при групуванні. За замовчанням згорнуті. -->
-                <field name="name" decoration-bf="is_active==True" decoration-danger="is_active==False"/>
-                <field name="is_active"/>
-                <!--                    decoration-bf="is_intern==True"         BOLD-->
-                <!--                    decoration-muted="is_intern==True"      GREY-->
-                <!--                    decoration-info="is_intern==True"       BLUE-->
-                <!--                    decoration-danger="is_intern==True"     RED-->
-                <!--                    decoration-warning="is_intern==True"    YELLOW-->
-                <!--                    decoration-success="is_intern==True"    GREEN-->
+                <field name="code"/>
+                <field name="name"/>
+                <field name="status" optional="show"/>
+
             </tree>
         </field>
     </record>
 
     <!-- FORM -->
-    <record id="wms_carrier_form" model="ir.ui.view">
-        <field name="name">wms.carrier.form</field>
-        <field name="model">wms.carrier</field>
+    <record id="wms_carrier_branch_form" model="ir.ui.view">
+        <field name="name">wms.carrier.branch.form</field>
+        <field name="model">wms.carrier.branch</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <!-- Ribbon Widgets -->
-                   <widget name="web_ribbon" title="Non active" bg_color="bg-danger" invisible="is_active==True"/>
+<!--                   <widget name="web_ribbon" title="Open" bg_color="bg-danger" invisible="status!=open"/>-->
 
                     <!-- Title Block -->
                     <div class="oe_title">
@@ -38,9 +46,10 @@
                     </div>
                     <group>
                         <group>
-                            <field name="is_active"/>
+                            <field name="code"/>
+                            <field name="status"/>
+                            <field name="carrier_id"/>
                         </group>
-                        <field name="branch_ids"/>
                     </group>
                 </sheet>
             </form>
@@ -77,28 +86,15 @@
     </record>
 
     <!--Search-->
-    <record id="wms_carrier_search" model="ir.ui.view">
-        <field name="name">wms.carrier.search</field>
-        <field name="model">wms.carrier</field>
+    <record id="wms_carrier_branch_search" model="ir.ui.view">
+        <field name="name">wms.carrier.branch.search</field>
+        <field name="model">wms.carrier.branch</field>
         <field name="arch" type="xml">
             <search>
-                <filter name="active_only" string="Active only" domain="[('is_active', '=', True)]"/>
-                <filter name="draft_only" string="Draft only" domain="[('is_active', '=', False)]"/>
+                <filter name="open_only" string="Open only" domain="[('status', '=', 'open')]"/>
+                <filter name="closed_only" string="Closed only" domain="[('status', '=', 'closed')]"/>
             </search>
         </field>
     </record>
-
-    <record id="wms_carrier_act_window" model="ir.actions.act_window">
-        <field name="name">Carriers</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">wms.carrier</field>
-        <field name="view_mode">tree,form,kanban</field>
-    </record>
-
-
-    <menuitem id="wms_carrier_menu"
-              action="wms_carrier_act_window"
-              parent="wms_admin_group_carrier_menu"
-              name="Carriers" sequence="200"/>
 
 </odoo>

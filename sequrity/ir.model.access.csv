@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-wms.access_wms_carrier,access_wms_carrier,wms.model_wms_carrier,base.group_user,1,1,1,1
-wms.access_res_country,access_res_country,wms.model_res_country,base.group_user,1,1,1,1
-,
+access_wms_carrier_user,access_wms_carrier,model_wms_carrier,base.group_user,1,1,1,1
+access_res_country_user,access_res_country,model_res_country,base.group_user,1,1,1,1
+access_wms_carrier_branch_user,access_wms_carrier_branch_user,model_wms_carrier_branch,base.group_user,1,1,1,1

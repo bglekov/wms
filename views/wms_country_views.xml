@@ -2,21 +2,22 @@
 <odoo>
 
     <!-- TREE -->
-    <record id="wms_carrier_tree" model="ir.ui.view">
-        <field name="name">wms.carrier.tree</field>
-        <field name="model">wms.carrier</field>
+    <record id="wms_country_tree" model="ir.ui.view">
+        <field name="name">wms.country.tree</field>
+        <field name="model">res.country</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
                 <field name="id"/>
+                <field name="search_deep"/>
             </tree>
         </field>
     </record>
 
     <!-- FORM -->
-    <record id="wms_carrier_form" model="ir.ui.view">
-        <field name="name">wms.carrier.form</field>
-        <field name="model">wms.carrier</field>
+    <record id="wms_country_form" model="ir.ui.view">
+        <field name="name">wms.country.form</field>
+        <field name="model">res.country</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>

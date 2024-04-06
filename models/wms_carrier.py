@@ -8,3 +8,8 @@ class Carriers(models.Model):
     name = fields.Char()
     is_active = fields.Boolean(default=True, store=True)
 
+    branch_ids = fields.One2many(
+        comodel_name='wms.carrier.branch',
+        string='Branches',
+        inverse_name='carrier_id',
+    )
