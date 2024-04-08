@@ -23,6 +23,10 @@
         'views/wms_carrier_views.xml',
         'views/wms_carrier_branch_views.xml',
         'views/wms_country_views.xml',
+        'views/wms_client_views.xml',
+        'views/wms_package_views.xml',
+        'views/wms_warehouse_views.xml',
+        'views/wms_package_status_views.xml',
     ],
     'demo': [
 

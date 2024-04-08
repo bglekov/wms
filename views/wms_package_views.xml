@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wms_package_act_window" model="ir.actions.act_window">
+        <field name="name">Packages</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wms.package</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="wms_package_menu"
+              action="wms_package_act_window"
+              parent="wms_warehouse_group_menu"
+              name="Packages" sequence="200"/>
+
+    <!-- TREE -->
+    <record id="wms_package_tree" model="ir.ui.view">
+        <field name="name">wms.package.tree</field>
+        <field name="model">wms.package</field>
+        <field name="arch" type="xml">
+            <tree expand="1">
+                <field name="track_number"/>
+                <field name="warehouse_id" optional="show"/>
+                <field name="status_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="wms_package_form" model="ir.ui.view">
+        <field name="name">wms.package.form</field>
+        <field name="model">wms.package</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status_id" widget="statusbar" options="{'clickable': 0}"/>
+                </header>
+                <sheet>
+                    <!-- Title Block -->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="track_number" placeholder="incoming track number"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="warehouse_id" options="{'no_open': True, 'no_create': True}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

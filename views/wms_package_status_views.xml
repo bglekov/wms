@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wms_package_status_act_window" model="ir.actions.act_window">
+        <field name="name">Package statuses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wms.package.status</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="wms_package_status_menu"
+              action="wms_package_status_act_window"
+              parent="wms_admin_group_menu"
+              name="Package statuses" sequence="99"/>
+
+    <!-- TREE -->
+    <record id="wms_package_status_tree" model="ir.ui.view">
+        <field name="name">wms.package.status.tree</field>
+        <field name="model">wms.package.status</field>
+        <field name="arch" type="xml">
+            <tree expand="0" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

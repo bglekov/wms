@@ -14,4 +14,17 @@
         <field name="is_active" eval="True"/>
     </record>
 
- </odoo>
+    <!--PACKAGE STATUSES-->
+     <record id="pDeclared" model="wms.package.status">
+        <field name="name">Declared</field>
+     </record>
+     <record id="pArrived" model="wms.package.status">
+        <field name="name">Arrived</field>
+     </record>
+     <record id="pProcessing" model="wms.package.status">
+        <field name="name">Processing</field>
+     </record>
+     <record id="pSent" model="wms.package.status">
+        <field name="name">Sent</field>
+     </record>
+</odoo>

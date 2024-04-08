@@ -18,5 +18,6 @@ class CarrierBranches(models.Model):
         comodel_name='wms.carrier',
         string='Carrier',
         required=True,
+        index=True,
     )
 

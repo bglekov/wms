@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wms_address_mixin,access_wms_address_mixin,model_wms_address_mixin,base.group_user,1,1,0,0
 access_wms_carrier_user,access_wms_carrier,model_wms_carrier,base.group_user,1,1,1,1
 access_res_country_user,access_res_country,model_res_country,base.group_user,1,1,1,1
 access_wms_carrier_branch_user,access_wms_carrier_branch_user,model_wms_carrier_branch,base.group_user,1,1,1,1
+access_wms_user_address_user,access_wms_user_address_user,model_wms_user_address,base.group_user,1,1,1,1
+access_wms_package_user,access_wms_package_user,model_wms_package,base.group_user,1,1,1,1
+access_wms_package_status,access_wms_package_status,model_wms_package_status,base.group_user,1,1,1,1
