@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem id="wms_main_group_menu"
+    <menuitem id="wms_root_menu"
               name="WMS" sequence="1"
               web_icon="wms,static/description/icon.png"/>
 
     <menuitem id="wms_user_group_menu"
               name="User" sequence="10"
-              parent="wms_main_group_menu"/>
+              parent="wms_root_menu"/>
 
     <menuitem id="wms_warehouse_group_menu"
               name="Warehouse" sequence="30"
-              parent="wms_main_group_menu"/>
+              parent="wms_root_menu"/>
 
     <menuitem id="wms_locations_group_menu"
               name="Locations" sequence="30"
-              parent="wms_main_group_menu"/>
+              parent="wms_root_menu"/>
 
     <menuitem id="wms_admin_group_menu"
               name="Admin tools" sequence="90"
-              parent="wms_main_group_menu"/>
+              parent="wms_root_menu"/>
 
         <menuitem id="wms_admin_group_carrier_menu"
                   name="Carrier" sequence="91"
