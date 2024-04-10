@@ -12,9 +12,6 @@
     <menuitem id="wms_warehouse_group_menu"
               name="Warehouse" sequence="30"
               parent="wms_main_group_menu"/>
-        <menuitem id="wms_warehouse_organization_group_menu"
-                  name="Organization" sequence="91"
-                  parent="wms_warehouse_group_menu"/>
 
     <menuitem id="wms_locations_group_menu"
               name="Locations" sequence="30"

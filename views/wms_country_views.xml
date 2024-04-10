@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--  Countries  -->
+    <!--  Countries (res.country)  -->
     <record id="wms_country_act_window" model="ir.actions.act_window">
         <field name="name">Countries</field>
         <field name="type">ir.actions.act_window</field>
@@ -16,7 +16,7 @@
 
     <!-- TREE -->
     <record id="wms_country_tree" model="ir.ui.view">
-        <field name="name">res.countru.tree</field>
+        <field name="name">res._country.tree</field>
         <field name="model">res.country</field>
         <field name="arch" type="xml">
             <tree expand="1">

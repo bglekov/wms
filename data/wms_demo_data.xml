@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--CARRIER_BRANCHES-->
+    <record id="Kyiv_HUB" model="wms.carrier.branch">
+        <field name="name">Kyiv HUB</field>
+        <field name="code">6</field>
+        <field name="carrier_id" ref="Meest"/>
+        <field name="status">open</field>
+    </record>
+    <record id="Lviv_HUB" model="wms.carrier.branch">
+        <field name="name">Lviv HUB</field>
+        <field name="code">11</field>
+        <field name="carrier_id" ref="Meest"/>
+        <field name="status">open</field>
+    </record>
+    <record id="Dnipro_HUB" model="wms.carrier.branch">
+        <field name="name">Dnipro HUB</field>
+        <field name="code">12</field>
+        <field name="carrier_id" ref="Meest"/>
+        <field name="status">open</field>
+    </record>
+    <record id="MMPO" model="wms.carrier.branch">
+        <field name="name">MMPO</field>
+        <field name="code">99</field>
+        <field name="carrier_id" ref="Meest"/>
+        <field name="status">open</field>
+    </record>
+        <record id="MP_1" model="wms.carrier.branch">
+        <field name="name">Nova poshta 1</field>
+        <field name="code">1</field>
+        <field name="carrier_id" ref="NP"/>
+        <field name="status">open</field>
+    </record>
+
+    <!--WAREHOUSES-->
+    <record id="Italy" model="res.company">
+        <field name="name">Italy</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="Spaine" model="res.company">
+        <field name="name">Spaine</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="Germany" model="res.company">
+        <field name="name">Germany</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="Italy_2" model="res.company">
+        <field name="name">Closed Italy</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!--partner-->
+    <record id="_WMS_TEST" model="res.partner">
+        <field name="name">_WMS_TEST</field>
+        <field name="company_type">person</field>
+    </record>
+    <!--user address-->
+    <record id="wms_test_sender" model="wms.user.address">
+        <field name="name">wms_test_sender</field>
+        <field name="first_name">test</field>
+        <field name="last_name">sender</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="is_sender" eval="True"/>
+        <field name="is_recipient" eval="False"/>
+        <field name="country_id" ref="base.uk"/>
+        <field name="city">Lviv</field>
+        <field name="street">Zelena</field>
+        <field name="house">93</field>
+    </record>
+    <record id="wms_test_recipient" model="wms.user.address">
+        <field name="name">wms_test_recipient</field>
+        <field name="first_name">test</field>
+        <field name="last_name">recipient</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="is_sender" eval="False"/>
+        <field name="is_recipient" eval="True"/>
+        <field name="country_id" ref="base.uk"/>
+        <field name="city">Kiyv</field>
+        <field name="street">Khreshatyk</field>
+        <field name="house">1</field>
+    </record>
+    <record id="wms_test_sender_recipient" model="wms.user.address">
+        <field name="name">wms_test_recipient</field>
+        <field name="first_name">test sender</field>
+        <field name="last_name">recipient</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="is_sender" eval="True"/>
+        <field name="is_recipient" eval="True"/>
+        <field name="country_id" ref="base.uk"/>
+        <field name="city">Kharkiv</field>
+        <field name="street">Suzdalskie rjady</field>
+        <field name="house">1</field>
+    </record>
+    <record id="wms_test_none_sender_none_recipient" model="wms.user.address">
+        <field name="name">wms_test_recipient</field>
+        <field name="first_name">test none sender</field>
+        <field name="last_name">recipient</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="is_sender" eval="False"/>
+        <field name="is_recipient" eval="False"/>
+        <field name="country_id" ref="base.ar"/>
+        <field name="city">khjguytfd</field>
+        <field name="street">ghjgjhg</field>
+        <field name="house">1</field>
+    </record>
+
+    <!--PACKAGE-->
+    <record id="wms_test_package_1" model="wms.package">
+        <field name="track_number">1231</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="warehouse_id" ref="wms.Spaine"/>
+        <field name="status_id" ref="wms.pDeclared"/>
+        <field name="sender_id" ref="wms.wms_test_sender"/>
+        <field name="s_country_id" ref="base.uk"/>
+        <field name="s_city">Lviv</field>
+        <field name="s_street">Zelena</field>
+        <field name="s_house">123</field>
+        <field name="recipient_id" ref="wms.wms_test_recipient"/>
+        <field name="r_country_id" ref="base.uk"/>
+        <field name="r_city">Kiyv</field>
+        <field name="r_street">Khreshatyk</field>
+        <field name="r_house">1</field>
+    </record>
+        <record id="wms_test_package_2" model="wms.package">
+        <field name="track_number">1232</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="warehouse_id" ref="wms.Spaine"/>
+        <field name="status_id" ref="wms.pDeclared"/>
+        <field name="sender_id" ref="wms.wms_test_sender"/>
+        <field name="s_country_id" ref="base.uk"/>
+        <field name="s_city">Lviv</field>
+        <field name="s_street">Zelena</field>
+        <field name="s_house">123</field>
+        <field name="recipient_id" ref="wms.wms_test_sender_recipient"/>
+        <field name="r_country_id" ref="base.uk"/>
+        <field name="r_city">Kharkiv</field>
+        <field name="r_street">Suzdalskie rjady</field>
+        <field name="r_house">1</field>
+    </record>
+    <record id="wms_test_package_3" model="wms.package">
+        <field name="track_number">1233</field>
+        <field name="client_id" ref="wms._WMS_TEST"/>
+        <field name="warehouse_id" ref="wms.Germany"/>
+        <field name="status_id" ref="wms.pDeclared"/>
+        <field name="sender_id" ref="wms.wms_test_sender_recipient"/>
+        <field name="s_country_id" ref="base.uk"/>
+        <field name="s_city">Kharkiv</field>
+        <field name="s_street">Suzdalskie rjady</field>
+        <field name="s_house">1</field>
+        <field name="recipient_id" ref="wms.wms_test_recipient"/>
+        <field name="r_country_id" ref="base.uk"/>
+        <field name="r_city">Kiyv</field>
+        <field name="r_street">Khreshatyk</field>
+        <field name="r_house">1</field>
+    </record>
+</odoo>

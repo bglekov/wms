@@ -20,6 +20,7 @@
         <field name="arch" type="xml">
             <tree expand="0" editable="top">
                 <field name="name"/>
+                <field name="order"/>
             </tree>
         </field>
     </record>

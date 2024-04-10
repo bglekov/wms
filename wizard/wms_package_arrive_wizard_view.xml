@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard form -->
+    <record id="wms_package_arrive_wizard_view_form" model="ir.ui.view">
+        <field name="name">wms.package.arrive.wizard.form</field>
+        <field name="model">wms.package.arrive.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="track_number"/>
+                    <field name="package_id"/>
+                </group>
+                <group>
+                    <field name="weight"/>
+                </group>
+                <footer>
+                    <button name="action_set_arrive" string="SAVE" type="object" class="btn-primary"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- действие для открытия визарда Actions -->
+    <record id="action_wms_package_arrive_wizard" model="ir.actions.act_window">
+        <field name="name">Arrive</field>
+        <field name="res_model">wms.package.arrive.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="wms.model_wms_package"/>
+        <field name="binding_view_types">list</field>
+        <field name="binding_type">action</field>
+    </record>
+
+</odoo>

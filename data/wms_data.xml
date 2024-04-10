@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <!--CARRIER-->
     <record id="Meest" model="wms.carrier">
         <field name="name">Meest Poshta</field>
@@ -13,6 +13,7 @@
         <field name="name">Ukr Poshta</field>
         <field name="is_active" eval="True"/>
     </record>
+
 
     <!--PACKAGE STATUSES-->
      <record id="pDeclared" model="wms.package.status">

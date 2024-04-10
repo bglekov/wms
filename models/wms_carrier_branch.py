@@ -9,7 +9,7 @@ class CarrierBranches(models.Model):
     code = fields.Char(required=True)
     status = fields.Selection(
         selection=[
-            ('open','Open)'),
+            ('open','Open'),
             ('closed','Closed'),
         ]
     )

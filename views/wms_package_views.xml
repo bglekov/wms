@@ -5,7 +5,7 @@
         <field name="name">Packages</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wms.package</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,pivot</field>
     </record>
 
 
@@ -23,6 +23,11 @@
                 <field name="track_number"/>
                 <field name="warehouse_id" optional="show"/>
                 <field name="status_id"/>
+                <field name="client_id"/>
+                <field name="s_country_id" optional="show"/>
+                <field name="r_country_id" optional="show"/>
+                <field name="recipient_id" optional="show"/>
+                <field name="weight" optional="show"/>
             </tree>
         </field>
     </record>
@@ -34,7 +39,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="status_id" widget="statusbar" options="{'clickable': 0}"/>
+                    <field name="status_id" widget="statusbar" options="{'clickable': 1}"/>
                 </header>
                 <sheet>
                     <!-- Title Block -->
@@ -44,10 +49,70 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="warehouse_id" options="{'no_open': True, 'no_create': True}"/>
+                        <group>
+                            <field name="client_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="warehouse_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="weight"/>
+                        </group>
                     </group>
+
+                    <!-- TABS -->
+                    <notebook colspan="4">
+                        <page string="Address" name="address">
+                            <group>
+                                <group>
+                                    <field name="sender_id" options="{'no_open': True, 'no_create': False}"/>
+                                    <field name="s_country_id" options="{'no_open': True, 'no_create': True}" string="Country"/>
+                                    <field name="s_state_id" options="{'no_open': True, 'no_create': True}" string="State"/>
+                                    <field name="s_zip" string="Zip"/>
+                                    <field name="s_city" string="City"/>
+                                    <field name="s_street" string="Street"/>
+                                    <field name="s_house" string="House"/>
+                                    <field name="s_flat" string="Flat"/>
+                                </group>
+                                <group>
+                                    <field name="recipient_id" options="{'no_open': True, 'no_create': False}"/>
+                                    <field name="r_country_id" options="{'no_open': True, 'no_create': True}" string="Country"/>
+                                    <field name="r_state_id" options="{'no_open': True, 'no_create': True}" string="State"/>
+                                    <field name="r_zip" string="Zip"/>
+                                    <field name="r_city" string="City"/>
+                                    <field name="r_street" string="Street"/>
+                                    <field name="r_house" string="House"/>
+                                    <field name="r_flat" string="Flat"/>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!--Pivot-->
+    <record id="wms_package_pivot" model="ir.ui.view">
+        <field name="name">wms.package.pivot</field>
+        <field name="model">wms.package</field>
+        <field name="arch" type="xml">
+            <pivot display_quantity="1">
+                <field name="warehouse_id" type="row"/>
+                <field name="status_id" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- SEARCH -->
+    <record id="wms_package_search" model="ir.ui.view">
+        <field name="name">wms.package.search</field>
+        <field name="model">wms.package</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Put here searches or group_by -->
+                <searchpanel view_types="list">
+                    <field name="warehouse_id" select="one" groupby="warehouse_id" hierarchize="1" icon="fa-database"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 

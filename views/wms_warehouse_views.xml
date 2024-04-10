@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="wms_organization_act_window" model="ir.actions.act_window">
-        <field name="name">Organizations</field>
+    <!--  Warehouses (res.company)  -->
+    <record id="wms_company_act_window" model="ir.actions.act_window">
+        <field name="name">Warehouses</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.company</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
-    <menuitem id="wms_company_menu"
-              action="wms_organization_act_window"
-              parent="wms_warehouse_organization_group_menu"
-              name="Organizations" sequence="201"/>
+    <menuitem id="wms_warehouse_menu"
+              action="wms_company_act_window"
+              parent="wms_warehouse_group_menu"
+              name="Warehouses" sequence="201"/>
 
+    <!-- TREE -->
+    <record id="wms_warehouse_tree" model="ir.ui.view">
+        <field name="name">res._company.tree</field>
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <tree expand="0">
+                <field name="name"/>
+                <field name="active" optional="show"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id" optional="show"/>
+            </tree>
+        </field>
+    </record>
 
 </odoo>

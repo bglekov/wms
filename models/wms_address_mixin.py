@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class Address_Mixin(models.Model):
+class Address_Mixin(models.AbstractModel):
     _name = 'wms.address.mixin'
     _description = 'Countries'
 
@@ -15,3 +15,9 @@ class Address_Mixin(models.Model):
         domain="[('country_id', '=', 'country_id')]",
     )
 
+    city = fields.Char()
+    street = fields.Char()
+    house = fields.Char(size=5)
+    flat = fields.Integer()
+
+    zip = fields.Char(size=7)

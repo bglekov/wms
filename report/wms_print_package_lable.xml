@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="print_package_lable" model="ir.actions.report">
+        <field name="name">Lable</field>
+        <field name="model">wms.package</field> <!-- it`s the model, which will be in template -->
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wms.wms_print_package_lable</field>
+        <field name="report_file">wms.wms_print_package_lable</field>
+        <field name="binding_model_id" ref="model_wms_package"/> <!-- model, where to set print menu -->
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form</field>
+    </record>
+
+    <template id='wms_print_package_lable'>
+        <t t-call="web.html_container">
+            <div class="page">
+                <t t-foreach="docs" t-as="doc">
+                    <!--HEADER-->
+                    <div class="oe_structure"/>
+                    <h1 class="my-4">
+                        <t t-out="title"/>Track Num: <span t-field="doc.track_number"/> Warehouse: <span t-field="doc.warehouse_id"/>
+                    </h1>
+
+                    <div class="oe_structure"></div>
+
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

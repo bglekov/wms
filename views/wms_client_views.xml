@@ -14,16 +14,5 @@
               parent="wms_user_group_menu"
               name="Clients" sequence="201"/>
 
-    <!--  Client addresses  -->
-    <record id="wms_user_address_act_window" model="ir.actions.act_window">
-        <field name="name">Client addresses</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">wms.user.address</field>
-        <field name="view_mode">tree,form</field>
-    </record>
 
-    <menuitem id="wms_user_address_menu"
-              action="wms_user_address_act_window"
-              parent="wms_user_group_menu"
-              name="Client addresses" sequence="202"/>
 </odoo>
