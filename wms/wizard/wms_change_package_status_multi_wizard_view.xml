@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard form -->
+    <record id="wms_change_package_status_multi_wizard_view_form" model="ir.ui.view">
+        <field name="name">wms.change.package.status.multi.wizard.form</field>
+        <field name="model">wms.change.package.status.multi.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="new_package_staus"/>
+                </group>
+                <footer>
+                    <button name="action_set_new_status" string="Set status" type="object" class="btn-primary"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Add wizard to Actions -->
+    <record id="action_wms_change_package_status_multi_wizard" model="ir.actions.act_window">
+        <field name="name">Set status</field>
+        <field name="res_model">wms.change.package.status.multi.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_wms_package"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="binding_type">action</field>
+    </record>
+
+</odoo>

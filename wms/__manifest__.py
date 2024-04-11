@@ -21,7 +21,7 @@
         'security/ir.model.access.csv',
         'data/wms_data.xml',
         'views/wms__main__menu.xml',
-        'views/wms_arrive_views.xml',
+        # 'views/wms_arrive_views.xml',
         'views/wms_carrier_views.xml',
         'views/wms_carrier_branch_views.xml',
         'views/wms_country_views.xml',
@@ -31,7 +31,7 @@
         'views/wms_warehouse_views.xml',
         'views/wms_package_status_views.xml',
         'report/wms_print_package_lable.xml',
-        'wizard/wms_package_arrive_wizard_view.xml'
+        'wizard/wms_change_package_status_multi_wizard_view.xml'
     ],
     'demo': [
         'data/wms_demo_data.xml',
