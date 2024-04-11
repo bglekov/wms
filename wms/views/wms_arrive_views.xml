@@ -4,7 +4,7 @@
     <record id="wms_package_arrive_act_window" model="ir.actions.act_window">
         <field name="name">Arrive form</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">wms.package</field>
+        <field name="res_model">wms.change.package.status.multi.wizard</field>
         <field name="view_mode">form</field>
     </record>
 
@@ -16,13 +16,12 @@
     <!-- FORM -->
     <record id="wms_package_arrive_form" model="ir.ui.view">
         <field name="name">wms.package.arrive.form</field>
-        <field name="model">wms.package</field>
+        <field name="model">wms.change.package.status.multi.wizard</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                         <field name="search_track_number"/>
-                        <field name="search_package_id"/>
+                        <field name="new_package_status"/>
                     </group>
                 </sheet>
             </form>
