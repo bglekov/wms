@@ -52,7 +52,10 @@
                         <group>
                             <field name="client_id" options="{'no_open': True, 'no_create': True}"/>
                             <field name="warehouse_id" options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                        <group>
                             <field name="weight"/>
+                            <field name="r_delivery_type"/>
                         </group>
                     </group>
 
@@ -72,6 +75,8 @@
                                 </group>
                                 <group>
                                     <field name="recipient_id" options="{'no_open': True, 'no_create': False}"/>
+                                    <field name="r_carrier_id"  invisible="r_delivery_type=='0'"/>
+                                    <field name="r_carrier_branch_id"  invisible="r_delivery_type=='0'"/>
                                     <field name="r_country_id" options="{'no_open': True, 'no_create': True}" string="Country"/>
                                     <field name="r_state_id" options="{'no_open': True, 'no_create': True}" string="State"/>
                                     <field name="r_zip" string="Zip"/>

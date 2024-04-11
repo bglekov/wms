@@ -77,6 +77,24 @@ class Packages(models.Model):
 
     r_zip = fields.Char(size=7, string="Recipient index")
 
+    # looks like 0-Door 1-branch, default Door
+    r_delivery_type = fields.Selection(
+        selection=[
+            ('0', 'Door'),
+            ('1', 'Branch'),
+        ],
+        default='0',
+        string="Delyvery type",
+    )
+
+    r_carrier_id = fields.Many2one(
+        comodel_name="wms.carrier"
+    )
+    r_carrier_branch_id = fields.Many2one(
+        comodel_name="wms.carrier.branch",
+        domain="[('carrier_id', '=', r_carrier_id)]",
+    )
+
     @api.onchange('sender_id')
     def _onchange_sender_id(self):
         """Fill the sender`s fields, when it`s changed and filled
@@ -106,3 +124,5 @@ class Packages(models.Model):
             self.r_house = self.recipient_id.house
             self.r_flat = self.recipient_id.flat
             self.r_zip = self.recipient_id.zip
+            self.r_carrier_id = self.recipient_id.carrier_id
+            self.r_carrier_branch_id = self.recipient_id.carrier_branch_id
