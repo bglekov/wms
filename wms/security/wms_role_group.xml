@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
+<odoo noupdate="1">
 
         <record id="category_group_wms" model="ir.module.category">
             <field name="name">WMS</field>
@@ -20,5 +19,4 @@
             <field name="comment">Administrators of the WMS</field>
         </record>
 
-    </data>
 </odoo>

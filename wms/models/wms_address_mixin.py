@@ -1,7 +1,7 @@
-from odoo import fields, models, api
+from odoo import fields, models
 
 
-class Address_Mixin(models.AbstractModel):
+class AddressMixin(models.AbstractModel):
     _name = 'wms.address.mixin'
     _description = 'Countries'
 

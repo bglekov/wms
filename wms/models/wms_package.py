@@ -5,10 +5,6 @@ class Packages(models.Model):
     _name = 'wms.package'
     _description = 'Packages'
 
-    search_track_number = fields.Char(store=False)
-    search_package_id = fields.Many2one(comodel_name="wms.package",store=False)
-    arrive_weight = fields.Float(digits=(8, 3), store=False)
-
     name = fields.Char(string="Track number", required=True)
     warehouse_id = fields.Many2one(
         comodel_name="res.company",
@@ -81,7 +77,6 @@ class Packages(models.Model):
 
     r_zip = fields.Char(size=7, string="Recipient index")
 
-
     @api.onchange('sender_id')
     def _onchange_sender_id(self):
         """Fill the sender`s fields, when it`s changed and filled
@@ -111,12 +106,3 @@ class Packages(models.Model):
             self.r_house = self.recipient_id.house
             self.r_flat = self.recipient_id.flat
             self.r_zip = self.recipient_id.zip
-
-    @api.onchange('search_track_number')
-    def _onchange_search_track_number(self):
-        # find the package by track number
-        package = self.env['wms.package'].search([('name', '=', self.search_track_number)], limit=1)
-        if package:
-            self.search_package_id = package.id
-        else:
-            self.search_package_id = False
