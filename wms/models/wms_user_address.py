@@ -29,7 +29,7 @@ class UserAddress(models.Model):
         comodel_name="wms.carrier"
     )
 
-    @api.onchange('first_name','last_name')
+    @api.onchange('first_name', 'last_name')
     def _compute_name(self):
         # self.ensure_one()
         for rec in self:

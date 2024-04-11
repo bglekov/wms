@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import fields, models
 
 
 class CarrierBranches(models.Model):
@@ -9,8 +9,8 @@ class CarrierBranches(models.Model):
     code = fields.Char(required=True)
     status = fields.Selection(
         selection=[
-            ('open','Open'),
-            ('closed','Closed'),
+            ('open', 'Open'),
+            ('closed', 'Closed'),
         ]
     )
 
@@ -20,4 +20,3 @@ class CarrierBranches(models.Model):
         required=True,
         index=True,
     )
-
