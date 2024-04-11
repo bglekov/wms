@@ -12,7 +12,7 @@ class AddressMixin(models.AbstractModel):
 
     state_id = fields.Many2one(
         comodel_name="res.country.state",
-        domain="[('country_id', '=', 'country_id')]",
+        domain="[('country_id', '=', country_id)]",
     )
 
     city = fields.Char()

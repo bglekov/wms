@@ -23,10 +23,20 @@ class UserAddress(models.Model):
     is_recipient = fields.Boolean(index=True)
 
     # looks like 0-Door 1-branch, default Door
-    delivery_type = fields.Integer()
+    delivery_type = fields.Selection(
+        selection=[
+            ('0', 'Door'),
+            ('1', 'Branch'),
+        ],
+        default='0',
+    )
 
     carrier_id = fields.Many2one(
         comodel_name="wms.carrier"
+    )
+    carrier_branch_id = fields.Many2one(
+        comodel_name="wms.carrier.branch",
+        domain="[('carrier_id', '=', carrier_id)]",
     )
 
     @api.onchange('first_name', 'last_name')
