@@ -39,7 +39,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="status_id" widget="statusbar" options="{'clickable': 1}"/>
+                    <field name="status_id" widget="statusbar" options="{'clickable': 0}"/>
                 </header>
                 <sheet>
                     <!-- Title Block -->

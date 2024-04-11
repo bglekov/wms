@@ -21,7 +21,7 @@
         'security/ir.model.access.csv',
         'data/wms_data.xml',
         'views/wms__main__menu.xml',
-        # 'views/wms_arrive_views.xml',
+        'views/wms_arrive_views.xml',
         'views/wms_carrier_views.xml',
         'views/wms_carrier_branch_views.xml',
         'views/wms_country_views.xml',

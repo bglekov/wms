@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="new_package_staus"/>
+                    <field name="new_package_status"/>
                 </group>
                 <footer>
                     <button name="action_set_new_status" string="Set status" type="object" class="btn-primary"/>

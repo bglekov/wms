@@ -11,7 +11,7 @@ class ChangePackageStatusMulti(models.TransientModel):
     _name = 'wms.change.package.status.multi.wizard'
     _description = 'Wizard for change package status'
 
-    new_package_staus = fields.Many2one(
+    new_package_status = fields.Many2one(
         comodel_name='wms.package.status',
         string="New status")
 
@@ -20,4 +20,4 @@ class ChangePackageStatusMulti(models.TransientModel):
         active_ids = self.env.context.get('active_ids')
         package_ids = self.env['wms.package'].browse(active_ids)
         for package in package_ids:
-            package.status_id = self.new_package_staus.id
+            package.status_id = self.new_package_status.id
