@@ -18,7 +18,7 @@
                     <!--HEADER-->
                     <div class="oe_structure"/>
                     <h1 class="my-4">
-                        <t t-out="title"/>Track Num: <span t-field="doc.track_number"/> Warehouse: <span t-field="doc.warehouse_id"/>
+                        <t t-out="title"/>Track Num: <span t-field="doc.name"/> Warehouse: <span t-field="doc.warehouse_id"/>
                     </h1>
 
                     <div class="oe_structure"></div>
