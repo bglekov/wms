@@ -7,8 +7,9 @@ class Packages(models.Model):
 
     search_track_number = fields.Char(store=False)
     search_package_id = fields.Many2one(comodel_name="wms.package",store=False)
+    arrive_weight = fields.Float(digits=(8, 3), store=False)
 
-    track_number = fields.Char(required=True)
+    name = fields.Char(string="Track number", required=True)
     warehouse_id = fields.Many2one(
         comodel_name="res.company",
         required=True,
@@ -114,7 +115,7 @@ class Packages(models.Model):
     @api.onchange('search_track_number')
     def _onchange_search_track_number(self):
         # find the package by track number
-        package = self.env['wms.package'].search([('track_number', '=', self.track_number)], limit=1)
+        package = self.env['wms.package'].search([('name', '=', self.search_track_number)], limit=1)
         if package:
             self.search_package_id = package.id
         else:

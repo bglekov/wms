@@ -1,1 +1,1 @@
-from . import wms_package_arrive_wizard
+from . import wms_change_package_status_multi_wizard
