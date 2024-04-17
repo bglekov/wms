@@ -12,7 +12,7 @@
     <menuitem id="wms_warehouse_menu"
               action="wms_company_act_window"
               parent="wms_warehouse_group_menu"
-              name="Warehouses" sequence="201"/>
+              name="Warehouses" sequence="20"/>
 
     <!-- TREE -->
     <record id="wms_warehouse_tree" model="ir.ui.view">

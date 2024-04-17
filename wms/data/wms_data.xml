@@ -28,4 +28,20 @@
      <record id="pSent" model="wms.package.status">
         <field name="name">Sent</field>
      </record>
+
+
+    <record id="sequence_wms_arrive" model="ir.sequence">
+        <field name="name">WMS Arrive Sequence</field>
+        <field name="code">wms.arrive.sequence</field>
+        <field name="prefix">Ar-</field>
+        <field name="padding">5</field>
+        <field name="implementation">standard</field>
+    </record>
+    <record id="sequence_wms_send" model="ir.sequence">
+        <field name="name">WMS Send Sequence</field>
+        <field name="code">wms.send.sequence</field>
+        <field name="prefix">Snd-</field>
+        <field name="padding">7</field>
+        <field name="implementation">standard</field>
+    </record>
 </odoo>

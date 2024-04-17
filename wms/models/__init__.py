@@ -5,4 +5,6 @@ from . import wms_carrier_branch
 from . import wms_user_address
 from . import wms_package
 from . import wms_package_status
+from . import wms_package_arrive
+from . import wms_package_send
 from . import wms_warehouse

@@ -17,6 +17,7 @@ class Packages(models.Model):
         index=True,
         default=lambda self: self.env.ref('wms.pDeclared').id
     )
+    doc_id = fields.Many2one(comodel_name='wms.package.arrive')
 
     weight = fields.Float(digits=(8, 3))
     client_id = fields.Many2one(

@@ -5,7 +5,7 @@
         <field name="name">Branches</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wms.carrier.branch</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <menuitem id="wms_carrier_branch_menu"
@@ -103,7 +103,7 @@
                 <filter name="open_only" string="Open only" domain="[('status', '=', 'open')]"/>
                 <filter name="closed_only" string="Closed only" domain="[('status', '=', 'closed')]"/>
                 <searchpanel view_types="list">
-                    <field name="carrier_id" select="one" groupby="carrier_id" hierarchize="1" icon="fa-database"/>
+                    <field name="carrier_id" select="one" groupby="carrier_id" hierarchize="1" icon="fa-filter"/>
                 </searchpanel>
             </search>
         </field>
