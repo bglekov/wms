@@ -5,12 +5,12 @@
               name="WMS" sequence="1"
               web_icon="wms,static/description/icon.png"/>
 
-    <menuitem id="wms_user_group_menu"
-              name="User" sequence="10"
+    <menuitem id="wms_warehouse_group_menu"
+              name="Warehouse" sequence="10"
               parent="wms_root_menu"/>
 
-    <menuitem id="wms_warehouse_group_menu"
-              name="Warehouse" sequence="30"
+    <menuitem id="wms_user_group_menu"
+              name="User" sequence="20"
               parent="wms_root_menu"/>
 
     <menuitem id="wms_locations_group_menu"

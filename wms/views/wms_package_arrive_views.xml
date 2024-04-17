@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wms_package_arrive_act_window" model="ir.actions.act_window">
+        <field name="name">Arrives</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wms.package.arrive</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="wms_arrive_menu"
+              action="wms_package_arrive_act_window"
+              parent="wms_warehouse_group_menu"
+              name="Arrive" sequence="30"/>
+
+    <!-- TREE -->
+    <record id="wms_package_arrive_tree" model="ir.ui.view">
+        <field name="name">wms.package.arrive.tree</field>
+        <field name="model">wms.package.arrive</field>
+        <field name="arch" type="xml">
+            <tree expand="1">
+                <field name="name"/>
+                <field name="warehouse_id"/>
+                <field name="package_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="wms_package_arrive_form" model="ir.ui.view">
+        <field name="name">wms.package.arrive.form</field>
+        <field name="model">wms.package.arrive</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <!-- Title -->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name" invisible="name == 'New'"/>
+                        </h1>
+                    </div>
+                    <!-- FORM -->
+                    <group>
+                        <field name="warehouse_id"/>
+                        <field name="status_id" invisible="True"/>
+                    </group>
+                    <!--list of packages -->
+                    <notebook>
+                        <page string="Packages" name="packages">
+                            <field name="package_move_ids" mode="tree" widget="stock_move_one2many"
+                                   context="{'default_status_id': status_id}"
+                                   add-label="Add a Package">
+                                <tree string="Package arrives" editable="1">
+                                    <field name="package_id" required="1" force_save="1"/>
+                                    <field name="weight"/>
+                                    <field name="doc_id" column_invisible="True"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH -->
+    <record id="wms_package_arrive_search" model="ir.ui.view">
+        <field name="name">wms.package_arrive.search</field>
+        <field name="model">wms.package.arrive</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Put here searches or group_by -->
+                <searchpanel view_types="list">
+                    <field name="warehouse_id" select="one" groupby="warehouse_id" hierarchize="1" icon="fa-filter"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+</odoo>

@@ -12,7 +12,7 @@
     <menuitem id="wms_package_menu"
               action="wms_package_act_window"
               parent="wms_warehouse_group_menu"
-              name="Packages" sequence="200"/>
+              name="Packages" sequence="10"/>
 
     <!-- TREE -->
     <record id="wms_package_tree" model="ir.ui.view">
@@ -115,7 +115,7 @@
             <search>
                 <!-- Put here searches or group_by -->
                 <searchpanel view_types="list">
-                    <field name="warehouse_id" select="one" groupby="warehouse_id" hierarchize="1" icon="fa-database"/>
+                    <field name="warehouse_id" select="one" groupby="warehouse_id" hierarchize="1" icon="fa-filter"/>
                 </searchpanel>
             </search>
         </field>
