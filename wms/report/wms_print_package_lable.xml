@@ -13,8 +13,9 @@
 
     <template id="wms_print_package_lable">
         <t t-call="web.html_container">
-            <div class="page">
-                <t t-foreach="docs" t-as="doc">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                <div class="page">
                     <!--HEADER-->
                     <div class="oe_structure"/>
                     <h1 class="my-4">
@@ -26,27 +27,28 @@
                         <div class="col-xs-6">
                             <div class="text-left">
                                 <h2>Sender:</h2>
-                                <p><t t-esc="doc.sender_id.name"/></p>
-                                <p><t t-esc="doc.s_country_id.name"/></p>
-                                <p><t t-esc="doc.s_state_id.name"/></p>
-                                <p><t t-esc="doc.s_city"/></p>
-                                <p><t t-esc="doc.s_street"/></p>
+                                <p><span t-field="doc.sender_id"/></p>
+                                <p><span t-field="doc.s_country_id"/></p>
+                                <p><span t-field="doc.s_state_id"/></p>
+                                <p><span t-field="doc.s_city"/></p>
+                                <p><span t-field="doc.s_street"/></p>
                             </div>
                         </div>
                         <!--RIGHT-->
                         <div class="col-xs-6">
                             <div class="text-right">
                                 <h2>Recipient:</h2>
-                                <p><t t-esc="doc.recipient_id.name"/></p>
-                                <p><t t-esc="doc.r_country_id.name"/></p>
-                                <p><t t-esc="doc.r_state_id.name"/></p>
-                                <p><t t-esc="doc.r_city"/></p>
-                                <p><t t-esc="doc.r_street"/></p>
+                                <p><span t-field="doc.recipient_id"/></p>
+                                <p><span t-field="doc.r_country_id"/></p>
+                                <p><span t-field="doc.r_state_id"/></p>
+                                <p><span t-field="doc.r_city"/></p>
+                                <p><span t-field="doc.r_street"/></p>
                             </div>
                         </div>
                     </div>
+                </div>
                 </t>
-            </div>
+            </t>
         </t>
     </template>
 </odoo>
