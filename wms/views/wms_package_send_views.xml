@@ -22,6 +22,7 @@
                 <field name="name"/>
                 <field name="warehouse_id"/>
                 <field name="package_qty"/>
+                <field name="create_uid" string="Author"/>
             </tree>
         </field>
     </record>
