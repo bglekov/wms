@@ -19,6 +19,7 @@
     'data': [
         'security/wms_role_group.xml',
         'security/ir.model.access.csv',
+        'security/wms_role_security.xml',
         'data/wms_data.xml',
         'views/wms__main__menu.xml',
         'views/wms_package_arrive_views.xml',
