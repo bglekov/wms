@@ -11,7 +11,7 @@
         <field name="binding_view_types">form</field>
     </record>
 
-    <template id='wms_print_package_lable'>
+    <template id="wms_print_package_lable">
         <t t-call="web.html_container">
             <div class="page">
                 <t t-foreach="docs" t-as="doc">
@@ -21,8 +21,30 @@
                         <t t-out="title"/>Track Num: <span t-field="doc.name"/> Warehouse: <span t-field="doc.warehouse_id"/>
                     </h1>
 
-                    <div class="oe_structure"></div>
-
+                    <div class="row">
+                        <!--LEFT-->
+                        <div class="col-xs-6">
+                            <div class="text-left">
+                                <h2>Sender:</h2>
+                                <p><t t-esc="doc.sender_id.name"/></p>
+                                <p><t t-esc="doc.s_country_id.name"/></p>
+                                <p><t t-esc="doc.s_state_id.name"/></p>
+                                <p><t t-esc="doc.s_city"/></p>
+                                <p><t t-esc="doc.s_street"/></p>
+                            </div>
+                        </div>
+                        <!--RIGHT-->
+                        <div class="col-xs-6">
+                            <div class="text-right">
+                                <h2>Recipient:</h2>
+                                <p><t t-esc="doc.recipient_id.name"/></p>
+                                <p><t t-esc="doc.r_country_id.name"/></p>
+                                <p><t t-esc="doc.r_state_id.name"/></p>
+                                <p><t t-esc="doc.r_city"/></p>
+                                <p><t t-esc="doc.r_street"/></p>
+                            </div>
+                        </div>
+                    </div>
                 </t>
             </div>
         </t>
