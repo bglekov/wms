@@ -6,14 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 21:40+0000\n"
-"PO-Revision-Date: 2024-04-06 21:40+0000\n"
+"POT-Creation-Date: 2024-04-18 06:11+0000\n"
+"PO-Revision-Date: 2024-04-18 06:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: wms
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_search
@@ -21,9 +23,57 @@ msgid "Active only"
 msgstr "Тільки активні"
 
 #. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_arrive_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_form
+msgid "Add a Package"
+msgstr "Додати пакунок"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_user_address_kanban
+msgid "Addr.:"
+msgstr "Адр.:"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "Address"
+msgstr "Адреса"
+
+#. module: wms
 #: model:ir.ui.menu,name:wms.wms_admin_group_menu
 msgid "Admin tools"
 msgstr "Адміністрування"
+
+#. module: wms
+#: model:res.groups,name:wms.wms_admin
+msgid "Administrator"
+msgstr "Адміністратор"
+
+#. module: wms
+#: model:res.groups,comment:wms.wms_admin
+msgid "Administrators of the WMS"
+msgstr "Адміністратор WMS"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_package_arrive
+#: model:ir.ui.menu,name:wms.wms_arrive_menu
+msgid "Arrive"
+msgstr "Надходження"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__name
+msgid "Arrive # "
+msgstr "Надходження №"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_package_arrive_act_window
+msgid "Arrives"
+msgstr "Надходження"
+
+#. module: wms
+#: model:ir.model.fields.selection,name:wms.selection__wms_package__r_delivery_type__1
+#: model:ir.model.fields.selection,name:wms.selection__wms_user_address__delivery_type__1
+msgid "Branch"
+msgstr "Підрозділ"
 
 #. module: wms
 #: model:ir.actions.act_window,name:wms.wms_carrier_branch_act_window
@@ -34,9 +84,15 @@ msgstr "Підрозділи"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__carrier_id
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__carrier_id
 #: model:ir.ui.menu,name:wms.wms_admin_group_carrier_menu
 msgid "Carrier"
 msgstr "Перевізник"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__carrier_branch_id
+msgid "Carrier Branch"
+msgstr "Підрозділ перевізника"
 
 #. module: wms
 #: model:ir.model,name:wms.model_wms_carrier_branch
@@ -48,6 +104,36 @@ msgstr "Підрозділи перевізників"
 #: model:ir.ui.menu,name:wms.wms_carrier_menu
 msgid "Carriers"
 msgstr "Перевізники"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__city
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__city
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "City"
+msgstr "Місто"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__client_id
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__client_id
+msgid "Client"
+msgstr "Клієнт"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_user_address_act_window
+#: model:ir.ui.menu,name:wms.wms_user_address_menu
+msgid "Client addresses"
+msgstr "Адреси клієнта"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_client_act_window
+#: model:ir.ui.menu,name:wms.wms_client_menu
+msgid "Clients"
+msgstr "Клієнти"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_change_package_status_multi_wizard_view_form
+msgid "Close"
+msgstr "Закрити"
 
 #. module: wms
 #: model:ir.model.fields.selection,name:wms.selection__wms_carrier_branch__status__closed
@@ -65,29 +151,105 @@ msgid "Code"
 msgstr "Код"
 
 #. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_kanban
+msgid "Code:"
+msgstr "КодЖ"
+
+#. module: wms
+#: model:ir.model,name:wms.model_res_company
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: wms
 #: model:ir.actions.act_window,name:wms.wms_country_act_window
 #: model:ir.model,name:wms.model_res_country
+#: model:ir.model,name:wms.model_wms_address_mixin
 #: model:ir.ui.menu,name:wms.wms_country_menu
 msgid "Countries"
 msgstr "Країни"
 
 #. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__country_id
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__country_id
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "Country"
+msgstr "Країна"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_country_group_act_window
+#: model:ir.ui.menu,name:wms.wms_country_group_menu
+msgid "Country groups"
+msgstr "Групи країн"
+
+#. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__create_uid
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__create_uid
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Створено"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__create_date
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__create_date
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__create_date
 msgid "Created on"
+msgstr "Створено"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_res_company__custom_address
+msgid "Custom Address"
 msgstr ""
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__delivery_type
+msgid "Delivery Type"
+msgstr "Тип доставки"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_delivery_type
+msgid "Delyvery type"
+msgstr "Тип доставки"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__display_name
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__display_name
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Назва"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__doc_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__doc_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__doc_id
+msgid "Doc"
+msgstr "Документ"
+
+#. module: wms
+#: model:ir.model.fields.selection,name:wms.selection__wms_package__r_delivery_type__0
+#: model:ir.model.fields.selection,name:wms.selection__wms_user_address__delivery_type__0
+msgid "Door"
+msgstr "ДВЕРІ"
 
 #. module: wms
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_search
@@ -95,32 +257,100 @@ msgid "Draft only"
 msgstr ""
 
 #. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__first_name
+msgid "First Name"
+msgstr "Ім'я"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_user_address_form
+msgid "First name + Last name"
+msgstr "ПІБ"
+
+#. module: wms
 #: model:ir.model,name:wms.model_wms_carrier
 msgid "First/Last miles Carriers"
-msgstr ""
+msgstr "Перевізники пеша-остання миля"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__flat
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__flat
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "Flat"
+msgstr "Квартира"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__house
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__house
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "House"
+msgstr "Будинок"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__id
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__id
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__id
+#: model:ir.model.fields,field_description:wms.field_wms_package__id
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__id
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__id
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__id
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__id
 msgid "ID"
-msgstr ""
+msgstr "ІД"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__is_active
 msgid "Is Active"
-msgstr ""
+msgstr "Активно"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__is_recipient
+msgid "Is Recipient"
+msgstr "Отримувач"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__is_sender
+msgid "Is Sender"
+msgstr "Відправник"
+
+#. module: wms
+#: model:ir.actions.report,name:wms.print_package_lable
+msgid "Lable"
+msgstr "Етикетка"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__last_name
+msgid "Last Name"
+msgstr "Прізвище"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__write_uid
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__write_uid
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Оновлено"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__write_date
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__write_date
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Оновлено"
 
 #. module: wms
 #: model:ir.ui.menu,name:wms.wms_locations_group_menu
@@ -130,48 +360,337 @@ msgstr "Локації"
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier__name
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__name
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__name
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__name
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_form
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_form
-#: model_terms:ir.ui.view,arch_db:wms.wms_country_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_arrive_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_form
 msgid "Name"
 msgstr "Ім'я"
 
 #. module: wms
+#. odoo-python
+#: code:addons/wms/models/wms_package_arrive.py:0
+#: code:addons/wms/models/wms_package_send.py:0
+#, python-format
+msgid "New"
+msgstr "Новий"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__new_package_status
+msgid "New status"
+msgstr "Новий статус"
+
+#. module: wms
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_form
 msgid "Non active"
-msgstr ""
+msgstr "Не активно"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__note
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_form
+msgid "Note"
+msgstr "Примітка"
+
+#. module: wms
+#: model:ir.model.fields.selection,name:wms.selection__wms_carrier_branch__status__open
+msgid "Open"
+msgstr "Відкрито"
 
 #. module: wms
 #: model_terms:ir.ui.view,arch_db:wms.wms_carrier_branch_search
 msgid "Open only"
-msgstr ""
+msgstr "Тільки відкриті"
 
 #. module: wms
-#: model:ir.model.fields.selection,name:wms.selection__wms_carrier_branch__status__open
-msgid "Open)"
-msgstr ""
+#: model:ir.model.fields,field_description:wms.field_wms_package_status__order
+msgid "Order"
+msgstr "Сортування"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__package_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send_line__package_id
+msgid "Package"
+msgstr "Пакунок"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__package_move_ids
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__package_move_ids
+msgid "Package Move"
+msgstr "Переміщення пакунків"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_package_arrive_line
+msgid "Package arrive line"
+msgstr "Стрічка надходження"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_arrive_form
+msgid "Package arrives"
+msgstr "Надходження пакунків"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_package_send_line
+msgid "Package send lines"
+msgstr "Стрічка відправки"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_form
+msgid "Package sends"
+msgstr "Відправки"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_package_status_act_window
+#: model:ir.model,name:wms.model_wms_package_status
+#: model:ir.ui.menu,name:wms.wms_package_status_menu
+msgid "Package statuses"
+msgstr "Статуси пакунків"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_package_send_act_window
+msgid "PackageSend"
+msgstr "Відправка"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_package_act_window
+#: model:ir.model,name:wms.model_wms_package
+#: model:ir.ui.menu,name:wms.wms_package_menu
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_arrive_form
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_form
+msgid "Packages"
+msgstr "Пакунки"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__package_qty
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__package_qty
+msgid "Q-ty"
+msgstr "К-ть"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_carrier_id
+msgid "R Carrier"
+msgstr "Отрим. Перевізник"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_carrier_branch_id
+msgid "R Carrier Branch"
+msgstr "Отрим. підрозділ"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__recipient_id
+msgid "Recipient"
+msgstr "Отримувач"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_city
+msgid "Recipient city"
+msgstr "Отрим. місто"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_country_id
+msgid "Recipient country"
+msgstr "Отрим. країна"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_flat
+msgid "Recipient flat"
+msgstr "Отрим. кв"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_house
+msgid "Recipient house"
+msgstr "Отрим. буд"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_zip
+msgid "Recipient index"
+msgstr "Отрим. індекс"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_state_id
+msgid "Recipient state"
+msgstr "Отрим. область"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__r_street
+msgid "Recipient street"
+msgstr "Отрим. вул."
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_res_country__search_deep
 msgid "Search Deep"
-msgstr ""
+msgstr "Глибина пошуку"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__name
+msgid "Send # "
+msgstr "Відправка №"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_package_send
+msgid "Send package"
+msgstr "Відправка"
+
+#. module: wms
+#: model:ir.ui.menu,name:wms.wms_send_menu
+msgid "Send packages"
+msgstr "Відправки"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__sender_id
+msgid "Sender"
+msgstr "Відправник"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_city
+msgid "Sender city"
+msgstr "Відпр. місто"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_country_id
+msgid "Sender country"
+msgstr "Відпр. країна"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_flat
+msgid "Sender flat"
+msgstr "Відпр. кв"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_house
+msgid "Sender house"
+msgstr "Відпр. буд."
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_zip
+msgid "Sender index"
+msgstr "Відпр. індекс"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_state_id
+msgid "Sender state"
+msgstr "Відпр. область"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__s_street
+msgid "Sender street"
+msgstr "Відпр. вул."
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_user_address
+msgid "Senders or recipients"
+msgstr "Відправники або отримувачі"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.action_wms_change_package_status_multi_wizard
+#: model_terms:ir.ui.view,arch_db:wms.wms_change_package_status_multi_wizard_view_form
+msgid "Set status"
+msgstr "Встановити статус"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__state_id
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__state_id
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "State"
+msgstr "Область"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_state_act_window
+#: model:ir.ui.menu,name:wms.wms_state_menu
+msgid "States"
+msgstr "Області"
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_carrier_branch__status
+#: model:ir.model.fields,field_description:wms.field_wms_package__status_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__status_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__status_id
 msgid "Status"
 msgstr "Статус"
 
 #. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__street
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__street
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "Street"
+msgstr "Вулиця"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_print_package_lable
+msgid "Track Num:"
+msgstr "Трек №"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__name
+msgid "Track number"
+msgstr "Трек №"
+
+#. module: wms
 #: model:ir.ui.menu,name:wms.wms_user_group_menu
+#: model:res.groups,name:wms.wms_user
 msgid "User"
 msgstr "Користувач"
 
 #. module: wms
-#: model:ir.ui.menu,name:wms.wms_main_group_menu
-msgid "WMS"
-msgstr ""
+#: model:ir.module.category,description:wms.category_group_wms
+msgid "User access levels for the WMS"
+msgstr "Рівені доступу для WMS"
 
 #. module: wms
+#: model:res.groups,comment:wms.wms_user
+msgid "Users of the WMS"
+msgstr "Користувач WMS"
+
+#. module: wms
+#: model:ir.module.category,name:wms.category_group_wms
+#: model:ir.ui.menu,name:wms.wms_root_menu
+msgid "WMS"
+msgstr "WMS"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__warehouse_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive__warehouse_id
+#: model:ir.model.fields,field_description:wms.field_wms_package_send__warehouse_id
 #: model:ir.ui.menu,name:wms.wms_warehouse_group_menu
 msgid "Warehouse"
 msgstr "Склад"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_print_package_lable
+msgid "Warehouse:"
+msgstr "Склад:"
+
+#. module: wms
+#: model:ir.actions.act_window,name:wms.wms_company_act_window
+#: model:ir.ui.menu,name:wms.wms_warehouse_menu
+msgid "Warehouses"
+msgstr "Склади"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_package__weight
+#: model:ir.model.fields,field_description:wms.field_wms_package_arrive_line__weight
+msgid "Weight"
+msgstr "Вага"
+
+#. module: wms
+#: model:ir.model,name:wms.model_wms_change_package_status_multi_wizard
+msgid "Wizard for change package status"
+msgstr "Зміна статусу пакунку"
+
+#. module: wms
+#: model:ir.model.fields,field_description:wms.field_wms_address_mixin__zip
+#: model:ir.model.fields,field_description:wms.field_wms_user_address__zip
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "Zip"
+msgstr "Індекс"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_form
+msgid "incoming track number"
+msgstr "вхідний трек №"

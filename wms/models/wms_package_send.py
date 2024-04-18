@@ -5,7 +5,7 @@ class PackageSend(models.Model):
     _name = 'wms.package.send'
     _description = 'Send package'
 
-    name = fields.Char(string='Send # ', required=True, index=True, default=lambda self: _('New'))
+    name = fields.Char(string='Send # ', required=True, index=True, default=lambda self: _('-'))
 
     warehouse_id = fields.Many2one(
         comodel_name='res.company',
@@ -37,8 +37,8 @@ class PackageSend(models.Model):
             rec.package_qty = len(rec.package_move_ids)
 
     def create(self, vals):
-        if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('wms.send.sequence') or _('New')
+        if vals.get('name', _('-')) == _('-'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('wms.send.sequence') or _('-')
         return super(PackageSend, self).create(vals)
 
     def write(self, vals):
