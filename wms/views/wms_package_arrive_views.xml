@@ -36,7 +36,7 @@
                     <!-- Title -->
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Name" invisible="name == 'New'"/>
+                            <field name="name" placeholder="Name" invisible="name == '-'"/>
                         </h1>
                     </div>
                     <!-- FORM -->

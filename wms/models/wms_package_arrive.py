@@ -5,7 +5,7 @@ class PackageArrive(models.Model):
     _name = 'wms.package.arrive'
     _description = 'Arrive'
 
-    name = fields.Char(string='Arrive # ', required=True, index=True, default=lambda self: _('New'))
+    name = fields.Char(string='Arrive # ', required=True, index=True, default=lambda self: _('-'))
 
     warehouse_id = fields.Many2one(
         comodel_name='res.company',
@@ -36,8 +36,8 @@ class PackageArrive(models.Model):
             rec.package_qty = len(rec.package_move_ids)
 
     def create(self, vals):
-        if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('wms.arrive.sequence') or _('New')
+        if vals.get('name', _('-')) == _('-'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('wms.arrive.sequence') or _('-')
         return super(PackageArrive, self).create(vals)
 
     def write(self, vals):
