@@ -32,15 +32,6 @@
             <field name="perm_create" eval="False"/>
             <field name="perm_unlink" eval="False"/>
         </record>
-        <record id="wms_package_send_rule_wms_user" model="ir.rule">
-            <field name="name">WMS users can see only own sends</field>
-            <field name="model_id" ref="model_wms_package_send"/>
-            <field name="domain_force">[('create_uid', '=', user.id)]</field>
-            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
-            <field name="perm_create" eval="False"/>
-            <field name="perm_unlink" eval="False"/>
-        </record>
+
     </data>
 </odoo>

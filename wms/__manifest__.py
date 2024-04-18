@@ -41,7 +41,7 @@
 
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
     'images': ['static/description/icon.png'],
     'price': 0,
     'currency': 'EUR',

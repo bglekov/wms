@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 06:11+0000\n"
-"PO-Revision-Date: 2024-04-18 06:33+0000\n"
+"POT-Creation-Date: 2024-04-18 14:09+0000\n"
+"PO-Revision-Date: 2024-04-18 14:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk_UA\n"
@@ -68,6 +68,12 @@ msgstr "Надходження №"
 #: model:ir.actions.act_window,name:wms.wms_package_arrive_act_window
 msgid "Arrives"
 msgstr "Надходження"
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_arrive_tree
+#: model_terms:ir.ui.view,arch_db:wms.wms_package_send_tree
+msgid "Author"
+msgstr "Автор"
 
 #. module: wms
 #: model:ir.model.fields.selection,name:wms.selection__wms_package__r_delivery_type__1
@@ -370,14 +376,6 @@ msgid "Name"
 msgstr "Ім'я"
 
 #. module: wms
-#. odoo-python
-#: code:addons/wms/models/wms_package_arrive.py:0
-#: code:addons/wms/models/wms_package_send.py:0
-#, python-format
-msgid "New"
-msgstr "Новий"
-
-#. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_change_package_status_multi_wizard__new_package_status
 msgid "New status"
 msgstr "Новий статус"
@@ -523,6 +521,11 @@ msgid "Recipient street"
 msgstr "Отрим. вул."
 
 #. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_print_package_lable
+msgid "Recipient:"
+msgstr ""
+
+#. module: wms
 #: model:ir.model.fields,field_description:wms.field_res_country__search_deep
 msgid "Search Deep"
 msgstr "Глибина пошуку"
@@ -581,6 +584,11 @@ msgstr "Відпр. область"
 #: model:ir.model.fields,field_description:wms.field_wms_package__s_street
 msgid "Sender street"
 msgstr "Відпр. вул."
+
+#. module: wms
+#: model_terms:ir.ui.view,arch_db:wms.wms_print_package_lable
+msgid "Sender:"
+msgstr ""
 
 #. module: wms
 #: model:ir.model,name:wms.model_wms_user_address
@@ -651,7 +659,7 @@ msgstr "Користувач WMS"
 #: model:ir.module.category,name:wms.category_group_wms
 #: model:ir.ui.menu,name:wms.wms_root_menu
 msgid "WMS"
-msgstr "WMS"
+msgstr ""
 
 #. module: wms
 #: model:ir.model.fields,field_description:wms.field_wms_package__warehouse_id
