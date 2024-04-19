@@ -39,13 +39,18 @@ class PackageSend(models.Model):
     def create(self, vals):
         if vals.get('name', _('-')) == _('-'):
             vals['name'] = self.env['ir.sequence'].next_by_code('wms.send.sequence') or _('-')
-        return super(PackageSend, self).create(vals)
+        # return super(PackageSend, self).create(vals)
+        res = super().create(vals)
+        for line in res.package_move_ids:
+            line.package_id.write({'status_id': res.status_id.id})
+        return res
 
     def write(self, vals):
         res = super(PackageSend, self).write(vals)
         for rec in self:
             for line in rec.package_move_ids:
                 line.package_id.write({'status_id': self.status_id.id})
+        return res
 
 class Package_Send_line(models.Model):
     _name = 'wms.package.send.line'

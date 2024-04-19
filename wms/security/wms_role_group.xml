@@ -16,6 +16,8 @@
         <record id="wms_admin" model="res.groups">
             <field name="name">Administrator</field>
             <field name="category_id" ref="category_group_wms"/>
+            <field name="implied_ids" eval="[(4, ref('wms_user'))]"/>
+            <field name="users" eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"/>
             <field name="comment">Administrators of the WMS</field>
         </record>
 

@@ -33,6 +33,8 @@
         'views/wms_warehouse_views.xml',
         'views/wms_package_status_views.xml',
         'report/wms_print_package_lable.xml',
+        'report/wms_print_package_lable_2.xml',
+        'report/wms_print_package_arrive.xml',
         'wizard/wms_change_package_status_multi_wizard_view.xml'
     ],
     'demo': [

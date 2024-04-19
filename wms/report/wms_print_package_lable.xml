@@ -17,14 +17,14 @@
                 <t t-call="web.basic_layout">
                 <div class="page">
                     <!--HEADER-->
-                    <div class="oe_structure"/>
+
                     <h1 class="my-4">
                         <t t-out="title"/>Track Num: <span t-field="doc.name"/> Warehouse: <span t-field="doc.warehouse_id"/>
                     </h1>
 
                     <div class="row">
                         <!--LEFT-->
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="text-left">
                                 <h2>Sender:</h2>
                                 <p><span t-field="doc.sender_id"/></p>
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <!--RIGHT-->
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="text-right">
                                 <h2>Recipient:</h2>
                                 <p><span t-field="doc.recipient_id"/></p>

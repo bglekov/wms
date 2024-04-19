@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="print_package_lable_2" model="ir.actions.report">
+        <field name="name">Lable_2</field>
+        <field name="model">wms.package</field> <!-- it`s the model, which will be in template -->
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wms.wms_print_package_lable_2</field>
+        <field name="report_file">wms.wms_print_package_lable_2</field>
+        <field name="binding_model_id" ref="model_wms_package"/> <!-- model, where to set print menu -->
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form</field>
+    </record>
+
+    <template id="wms_print_package_lable_2">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.internal_layout">
+
+
+                        <div class="row">
+                            <!--LEFT-->
+                            <div class="col-md-6">
+                                <div class="col-12">
+                                    <h1>Sender:</h1>
+                                    <p><span t-field="doc.sender_id"/></p>
+                                    <p><span t-field="doc.s_country_id"/></p>
+                                </div>
+                            </div>
+                            <!--RIGHT-->
+                            <div class="col-md-6">
+                                <div class="col-12">
+                                    <h1>Recipient:</h1>
+                                    <p><span t-field="doc.recipient_id"/></p>
+                                    <p><span t-field="doc.r_country_id"/></p>
+                                </div>
+                            </div>
+                        </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

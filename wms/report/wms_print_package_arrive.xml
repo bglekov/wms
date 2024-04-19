@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="print_package_arrive" model="ir.actions.report">
+        <field name="name">Package arrive</field>
+        <field name="model">wms.package.arrive</field> <!-- it`s the model, which will be in template -->
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wms.wms_print_package_arrive</field>
+        <field name="report_file">wms.wms_print_package_arrive</field>
+        <field name="binding_model_id" ref="model_wms_package_arrive"/> <!-- model, where to set print menu -->
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form,tree</field>
+    </record>
+
+    <template id="wms_print_package_arrive">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="doc">
+                        <div class="oe_structure"/>
+                        <!--HEADER-->
+                        <h1 class="my-4">
+                            <t t-out="title"/>Arrive #: <span t-field="doc.name"/>
+                        </h1>
+
+                        <div class="row">
+                            <table class="table table-condensed">
+                                <!--TABLE HEADER-->
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:left;">
+                                            <strong>Package</strong>
+                                        </th>
+                                        <th style="text-align:left;">
+                                            <strong>Weight</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <!--TABLE BODY-->
+                                <tbody>
+                                    <t t-foreach="doc.package_move_ids" t-as="move">
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                <t t-out="move['package_id'].name"/>
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <t t-out="move['weight']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

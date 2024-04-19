@@ -38,13 +38,18 @@ class PackageArrive(models.Model):
     def create(self, vals):
         if vals.get('name', _('-')) == _('-'):
             vals['name'] = self.env['ir.sequence'].next_by_code('wms.arrive.sequence') or _('-')
-        return super(PackageArrive, self).create(vals)
+        # return super(PackageArrive, self).create(vals)
+        res = super().create(vals)
+        for line in res.package_move_ids:
+            line.package_id.write({'status_id': res.status_id.id, 'weight': line.weight})
+        return res
 
     def write(self, vals):
         res = super(PackageArrive, self).write(vals)
         for rec in self:
             for line in rec.package_move_ids:
                 line.package_id.write({'status_id': self.status_id.id, 'weight': line.weight})
+        return res
 
 class Package_Arrive_line(models.Model):
     _name = 'wms.package.arrive.line'
